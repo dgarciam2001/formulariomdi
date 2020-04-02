@@ -11,10 +11,9 @@ package formulariomdi;
  */
 public class formulariomdij extends javax.swing.JFrame {
 
-    /**
-     * Creates new form formulariomdij
-     */
      private MantenimientoMaestros ventanaMaestros;
+     private MantenimientoConceptos ventanaConceptos;
+     private MantenimientoAlumnos ventanaAlumnos;
     public formulariomdij() {
         initComponents();
     }
@@ -65,6 +64,11 @@ public class formulariomdij extends javax.swing.JFrame {
         JMenuCatalogos.add(JMenuMaestros);
 
         JMenuAlumnos.setText("Mantenimiento Alumnos");
+        JMenuAlumnos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JMenuAlumnosActionPerformed(evt);
+            }
+        });
         JMenuCatalogos.add(JMenuAlumnos);
 
         jMenuBar1.add(JMenuCatalogos);
@@ -118,6 +122,12 @@ public class formulariomdij extends javax.swing.JFrame {
         ventanaMaestros=new MantenimientoMaestros();
         jDesktopPane1.add(ventanaMaestros);
     }//GEN-LAST:event_JMenuMaestrosActionPerformed
+
+    private void JMenuAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuAlumnosActionPerformed
+        // TODO add your handling code here:
+       ventanaAlumnos = new MantenimientoAlumnos();
+       jDesktopPane1.add(ventanaAlumnos);
+    }//GEN-LAST:event_JMenuAlumnosActionPerformed
 
     /**
      * @param args the command line arguments
